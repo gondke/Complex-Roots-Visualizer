@@ -2,10 +2,10 @@ import numpy as np
 import plotly.graph_objects as go
 import streamlit as st
 
-# Streamlit Page Setup
+# Streamlit Page Setup (Fixed keyword argument from page_layout to layout)
 st.set_page_config(
     page_title="Complex Roots Visualizer",
-    page_layout="wide",
+    layout="wide",
     initial_sidebar_state="expanded",
 )
 
@@ -212,10 +212,10 @@ with col2:
     st.markdown("**Original Roots:**")
     for i in range(n_roots):
         val = complex(orig_x[i], orig_y[i])
-        st.write(f"$\text{{R}}_{{{i+1}}}$: `{val.real:+.3f} {val.imag:+.3f}j`")
+        st.write(f"$\\text{{R}}_{{{i+1}}}$: `{val.real:+.3f} {val.imag:+.3f}j`")
 
     if transform_op != "None":
         st.markdown(f"**Transformed Roots ({transform_op}):**")
         for i in range(n_roots):
             val_t = complex(trans_x[i], trans_y[i])
-            st.write(f"$\text{{R}}_{{{i+1}}}'$: `{val_t.real:+.3f} {val_t.imag:+.3f}j`")
+            st.write(f"$\\text{{R}}_{{{i+1}}}'$: `{val_t.real:+.3f} {val_t.imag:+.3f}j`")
